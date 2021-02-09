@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Button-counter-Huggins</string>
+    <string name="inc_text">+1</string>
+    <string name="dec_text">-1</string>
+    <string name="count_text">"Count: "</string>
+    <string name="reset_text">Reset Count</string>
 </resources>
