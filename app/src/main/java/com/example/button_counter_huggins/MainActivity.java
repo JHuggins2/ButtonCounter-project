@@ -20,21 +20,19 @@ public class MainActivity extends AppCompatActivity {
     private TextView counterText;
     private int count = 0;
 
-    private String countStr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        countStr = getString(R.string.count_text);
 
         counterText = findViewById(R.id.countTextId);
         upButton = findViewById(R.id.incrementButtonId);
         upButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counterText.setText(countStr + String.valueOf(++count));
+                counterText.setText(String.valueOf(++count));
                 //Toast.makeText(getApplicationContext(), "Testing", Toast.LENGTH_SHORT).show();
                 //Log.i(TAG, "Test Message");
             }
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         downButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                counterText.setText(countStr + --count);
+                counterText.setText(String.valueOf(--count));
             }
         });
 
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 count = 0;
-                counterText.setText(countStr + count);
+                counterText.setText(String.valueOf(count));
             }
         });
     }
@@ -69,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         count = savedInstanceState.getInt("countVal");
-        counterText.setText(countStr + count);
+        counterText.setText(String.valueOf(count));
     }
 
     @Override
